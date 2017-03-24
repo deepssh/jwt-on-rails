@@ -1,0 +1,24 @@
+using httpie
+
+http POST :3000/todos/2/items name='Listen to 5th Symphony' done=false
+
+http POST :3000/auth_user email="a@a.com" password="changeme"
+
+using curl
+curl -X POST -d email="a@a.com" -d password="changeme" http://localhost:3000/auth_user 
+
+curl -u username:password http://
+
+You’ll receive a successful response along with a JSON Web Token and additional user information. Like this:
+{"auth_token":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxfQ.po9twTrX99V7XgAk5mVskkiq8aa0lpYOue62ehubRY4","user":{"id":1,"email":"a@a.com"}}
+
+curl --header "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxfQ.po9twTrX99V7XgAk5mVskkiq8aa0lpYOue62ehubRY4" http://localhost:3000/home 
+
+now response
+{"logged_in":true}
+
+git config --global user.email "deepesh.k@infogain.com"
+GIT_COMMITTER_EMAIL=deepesh.k@infogain.com 
+GIT_AUTHOR_EMAIL=deepesh.k@infogain.com 
+
+ssh-keygen -t rsa -b 4096 -C "deepesh.k@infogain.com"
